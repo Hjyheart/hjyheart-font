@@ -36,7 +36,6 @@ export default async(type = 'GET', url = '', data = {}, method = 'fetch') => {
 
   if (window.fetch && method === 'fetch') {
     let requestConfig = {
-      credentials: 'include',
       method: type,
       headers: {
         'Accept': 'application/json',

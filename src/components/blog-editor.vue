@@ -34,7 +34,7 @@
         </div>
       </div>
     </div>
-    <markdownEditor></markdownEditor>
+    <markdownEditor ref="markdown"></markdownEditor>
     <div class="buttons">
       <a class="left" @click="openDescModal">确认提交</a>
       <a class="right" @click="openCancelModal">取消</a>
@@ -73,7 +73,6 @@
 
   import $ from 'jquery'
 
-  // TODO: 加图片
 
   export default {
     data () {
@@ -156,20 +155,21 @@
         this.$refs.submitModal.hide();
         this.loadText = '等待中...';
         this.loadClass = 'loader loader-default is-active';
-        let val = '';
-        let texts = document.getElementsByClassName('CodeMirror-line');
-
-        for (let i = 0; i < texts.length; i++){
-          let spans = texts[i].getElementsByTagName('span');
-          val += spans[0].textContent + '\n';
-        }
+//        let val = '';
+//        let texts = document.getElementsByClassName('CodeMirror-line');
+//
+//        for (let i = 0; i < texts.length; i++){
+//          let spans = texts[i].getElementsByTagName('span');
+//          val += spans[0].textContent + '\n';
+//        }
+        console.log(this.$refs.markdown.content)
 
         var formData = new FormData()
         formData.append('title', this.blogTitle)
         formData.append('desc', this.desc)
         formData.append('cover', this.key)
         formData.append('tags', '[' + this.selectTags.toString() + ']')
-        formData.append('value', val)
+        formData.append('value', this.$refs.markdown.content)
 
         submitBlog(formData).then(res => {
           console.log(res)
@@ -306,7 +306,7 @@
       this.initData()
     },
     mounted () {
-
+      console.log('edit')
     }
   }
 </script>
