@@ -6,10 +6,12 @@ import router from './router'
 import VueParticles from './vue-particles'
 import VueSimplemde from './vue-simplemde'
 import AwesomeSwiper from 'vue-awesome-swiper'
+import VueSession from 'vue-session'
 
 Vue.use(VueParticles)
 Vue.use(VueSimplemde)
 Vue.use(AwesomeSwiper)
+Vue.use(VueSession)
 
 Vue.config.productionTip = false
 

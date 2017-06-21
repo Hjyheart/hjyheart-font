@@ -57,7 +57,7 @@
       let bubbles = document.getElementsByClassName('bubbles')[0].childNodes;
       console.log(bubbles.length)
       for (let i = 0; i < bubbles.length; i++){
-        this.run(bubbles[i], (i % 3) + 1)
+        this.run(bubbles[i], (i % 2) + 1)
       }
     },
     watch: {
@@ -65,7 +65,7 @@
         setTimeout(() => {
           let bubbles = document.getElementsByClassName('bubbles')[0].childNodes;
           console.log(bubbles.length)
-          this.run(bubbles[bubbles.length - 1], Math.random() % 3 + 1)
+          this.run(bubbles[bubbles.length - 1], Math.random() % 2 + 1)
         })
       }
     }

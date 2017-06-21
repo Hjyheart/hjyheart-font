@@ -1,9 +1,6 @@
 /**
  * Created by hongjiayong on 2017/5/23.
  */
-/**
- * Created by hongjiayong on 2017/5/22.
- */
 
 import {baseUrl} from '../../config/index'
 

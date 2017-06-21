@@ -5,6 +5,7 @@ import blogEditor from '@/components/blog-editor'
 import blogs from '@/components/blogs'
 import test from '@/components/test'
 import blog from '@/components/blog-detail'
+import login from '@/components/login'
 
 Vue.use(Router)
 
@@ -12,7 +13,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/emotion'
+      redirect: '/login'
     },
     {
       path: '/emotion',
@@ -34,10 +35,10 @@ export default new Router({
       name: 'blog',
       component: blog
     },
-    // {
-    //   path: '**',
-    //   redirect: '/'
-    // },
+    {
+      path: '/login',
+      component: login
+    },
     {
       path: '/test',
       name: 'test',
